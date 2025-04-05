@@ -20,7 +20,6 @@ GRAPH-ASSIGNMENT/
 │   └── doctest.h                  # Doctest header for running tests
 │
 ├── Makefile                       # Makefile to compile and build the project
-├── submission.txt                 # Contains id, github link and lust update
 └── README.md                      # This file
 
 
