@@ -85,8 +85,14 @@ namespace graph {
 
         // If no good input or no input - initialize random start vertex
         if (randomStart < 0 || randomStart >= numVertices) {
-            srand(time(0)); // Initialize the random seed based on current time
-            randomStart = rand() % numVertices; // Choose a random starting vertex
+            if(randomStart == -1){
+                srand(time(0)); // Initialize the random seed based on current time
+                randomStart = rand() % numVertices; // Choose a random starting vertex
+            }
+            else{
+                throw std::runtime_error("The vertex you chosse is not it the graph!");
+            }
+            
         }
 
         // Perform DFS starting from the random vertex
@@ -111,7 +117,10 @@ namespace graph {
             throw std::runtime_error("Graph contains negative edges, Dijkstra's algorithm cannot be used.");
         }
         int numVertices = graph.getNumVertices();
-        
+        // check the vertices
+        if(start<0 || start>=numVertices){
+            throw std::runtime_error("The vertex you chosse is not it the graph!");
+        }
         // Initialize all nodes as unvisited
         bool* visited = new bool[numVertices] {false};  
 
@@ -176,9 +185,15 @@ namespace graph {
 
         // If no good input or no input - initialize random start vertex
         if (start < 0 || start >= numVertices) {
-            std::cout << "no good input or no input, choose random start vertex!" << std::endl;
-            srand(time(0)); 
-            start = rand() % numVertices;  
+            if (start==-1){
+                std::cout << "No input, choose random start vertex!" << std::endl;
+                srand(time(0)); 
+                start = rand() % numVertices;
+            }
+            else{
+                throw std::runtime_error("The vertex you chosse is not it the graph!");
+            }
+              
         }
 
         // initialize visited, key and parent
