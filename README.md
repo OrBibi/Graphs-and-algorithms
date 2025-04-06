@@ -42,8 +42,10 @@ Important to know:
 The `Algorithms` class implements various algorithms for graph traversal and pathfinding, which can be applied to any instance of the `Graph` class. These algorithms include:
 - **BFS (Breadth-First Search)**: A graph traversal algorithm that explores all vertices at the present depth level before moving on to vertices at the next depth level (Finds the shortest path without considering the weight of the edges).
 - **DFS (Depth-First Search)**: A graph traversal algorithm that explores as far down a branch as possible before backtracking.
+- if you dont input v it will chosse randomly!!!
 - **Dijkstra's Algorithm**: A shortest-path algorithm that finds the minimum distance from a source node to all other nodes in a weighted graph.
 - **Prim's Algorithm**: A minimum spanning tree (MST) algorithm that builds an MST by repeatedly adding the smallest edge that connects a vertex in the MST to a vertex outside the MST.
+- if you dont input v it will chosse randomly!!!
 - **Kruskal's Algorithm**: Another MST algorithm that sorts all edges by weight and adds them to the MST if they do not form a cycle.
 
 ### 3. **Queue**:
