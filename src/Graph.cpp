@@ -19,6 +19,22 @@ namespace graph {
         this->numOfNegativeEdges = 0;
     }
 
+    // Copy Constructor
+    Graph::Graph(const Graph& other) {
+        this->numVertices = other.numVertices;
+        this->numOfNegativeEdges = other.numOfNegativeEdges;
+
+        // Allocate new memory for the adjacency list
+        adjacencyList = new int*[numVertices];
+        for (int i = 0; i < numVertices; i++) {
+            adjacencyList[i] = new int[numVertices];
+            for (int j = 0; j < numVertices; j++) {
+                adjacencyList[i][j] = other.adjacencyList[i][j];
+            }
+        }
+    }
+
+
     // Add edge
     void Graph::addEdge(int src, int dest, int weight) {
         if (src >= numVertices || dest >= numVertices || src < 0 || dest < 0) {

@@ -35,6 +35,20 @@ TEST_CASE("Graph creation and adding edges") {
     CHECK(adjList[1][2] == 1); // Default weight for missing edge
     CHECK(adjList[4][4] == NO_EDGE); // No self-loop, should be NO_EDGE
     CHECK(adjList[0][3] == NO_EDGE); // No direct connection, should be NO_EDGE
+
+    Graph copyGraph = graph; // Test copy constructor
+    const int** copyAdjList = copyGraph.getAdjacencyList();
+    CHECK(copyAdjList[0][1] == 2);
+    CHECK(copyAdjList[0][2] == 4);  
+    CHECK(copyAdjList[1][3] == 1);
+    CHECK(copyAdjList[3][4] == 3);
+    CHECK(copyAdjList[1][0] == 2);
+    CHECK(copyAdjList[2][0] == 4);
+    CHECK(copyAdjList[3][1] == 1);
+    CHECK(copyAdjList[4][3] == 3);
+    CHECK(copyAdjList[1][2] == 1); // Default weight for missing edge
+    CHECK(copyAdjList[4][4] == NO_EDGE); // No self-loop, should be NO_EDGE
+    CHECK(copyAdjList[0][3] == NO_EDGE); // No direct connection, should be NO_EDGE
 }
 
 // Test case for Breadth-First Search (BFS) algorithm on a connected graph

@@ -10,6 +10,9 @@ namespace graph {
     public:
         // Constructor
         Graph(int numVertices);
+        
+        // Copy Constructor
+        Graph(const Graph& other);  
 
         // Add and remove edges
         void addEdge(int src, int dest, int weight = 1);
