@@ -43,6 +43,7 @@ namespace graph {
         if (src==dest){
             throw std::out_of_range("No edges from v to himself");
         }
+        if (adjacencyList[src][dest] != NO_EDGE && adjacencyList[src][dest]<0) numOfNegativeEdges--;  // If it was a negative edge, decrement the counter
         adjacencyList[src][dest] = weight;
         adjacencyList[dest][src] = weight;
 
